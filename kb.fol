@@ -1,0 +1,36 @@
+% ---------- FACTS ----------
+Room(living_room).
+Room(bedroom).
+Room(kitchen).
+
+Temperature(living_room, 27).
+Temperature(bedroom, 22).
+Temperature(kitchen, 29).
+
+LightOn(living_room).
+LightOn(kitchen).
+
+Occupied(living_room).
+Occupied(kitchen).
+
+% ---------- RULES ----------
+
+% A room needs cooling if temperature is greater than 25
+NeedsCooling(X) :- Room(X), Temperature(X, T), GreaterThan(T, 25).
+
+% A room needs heating if temperature is below 20
+NeedsHeating(X) :- Room(X), Temperature(X, T), LessThan(T, 20).
+
+% A room should turn off light if no one is inside
+ShouldTurnOffLight(X) :- LightOn(X), not(Occupied(X)).
+
+% Turn on AC if room needs cooling and is occupied
+TurnOnAC(X) :- NeedsCooling(X), Occupied(X).
+
+% Turn on heater if room needs heating and is occupied
+TurnOnHeater(X) :- NeedsHeating(X), Occupied(X).
+
+% ---------- BUILT-IN RELATIONS ----------
+GreaterThan(27, 25).
+GreaterThan(29, 25).
+LessThan(18, 20).
