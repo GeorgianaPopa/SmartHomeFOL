@@ -1,0 +1,42 @@
+# === Python Virtual Environment ===
+.venv/
+venv/
+ENV/
+env/
+
+# === Python Cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Model artifacts ===
+models/
+*.joblib
+
+# === Data files & generated CSVs ===
+data/splits/
+data/clean_reviews.csv
+*.csv
+*.xlsx
+*.ods
+
+# === Logs ===
+*.log
+
+# === VSCode ===
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Jupyter notebooks checkpoint ===
+.ipynb_checkpoints/
+
+# === Backup ===
+*.bak
+*.tmp
+
+# === PyCharm ===
+.idea/
